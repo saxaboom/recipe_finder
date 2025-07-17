@@ -36,14 +36,11 @@ def preprocess_data(recipes):
     return df
 
 def main():
-    st.title("Recipe Rolodex")
-    loading_box = st.empty()
-    loading_box.write("Fetching and processing recipe data...")
+    st.title("Recipe Finder")
+    st.write("Fetching and processing recipe data...")
 
     recipes = fetch_and_parse_data(DATA_URL)
     df = preprocess_data(recipes)
-
-    loading_box.write("Now ready to serve!!")
 
     # Combine some text fields for better search
     df['search_text'] = (
